@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "eslint:recommended"
+  ],
+  "jsRules": {},
+  "plugins": [
+    "node"
+  ],
+  "rules": {
+    "typedef": false,
+    "no-console": false,
+    "eofline": false,
+    "quotemark": [
+      true, 
+      "single"
+    ],
+    "block-scoped-var": "error",
+    "no-var": "error",
+    "prefer-const": "error"
+  },
+  "rulesDirectory": []
+}
