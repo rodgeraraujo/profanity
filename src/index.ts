@@ -35,7 +35,7 @@ export class Profanity {
       saveOriginal: true,
       enabled: true,
       placeHolder: "*",
-      replaceRegex: /\wÀ-ž]/g,
+      replaceRegex: /[\wÀ-ž]/g,
       separatorRegex: /\w+|[^\w\s]|\s+/g,
       excludeWords: [],
       language: "pt-br",
@@ -151,17 +151,4 @@ export class Profanity {
     }
     return "";
   }
-
-  // addWords(...words: string[]) {
-  //   if (words.length === 0)
-  //     console.error("Unexpected error: need at last one word");
-  //   this.wordlist.push(...words);
-  // }
-
-  // removeWords(...words: string[]) {
-  //   if (words.length === 0)
-  //     console.error("Unexpected error: need at last one word to remove");
-  //   // this.config?.excludeWords.push(...words);
-  //   // this.exclude.push(...Array.from(arguments).map(word => word.toLowerCase()));
-  // }
 }
