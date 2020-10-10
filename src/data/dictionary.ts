@@ -259,7 +259,6 @@ export default {
       "fuck",
       "shit",
       "ass",
-      "asshole",
       "b!tch",
       "b17ch",
       "b1tch",

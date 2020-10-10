@@ -4,6 +4,7 @@ import Configuration from "./interfaces/IConfiguration";
 import dictionary from "./data/dictionary";
 
 import { getProperty } from "./util";
+import console from 'console';
 
 /**
  * Profanity class.
@@ -150,5 +151,21 @@ export class Profanity {
       return this.originalText;
     }
     return "";
+  }
+
+  addWords(...words: string[]) {
+    if (words.length === 0)
+      console.error("Unexpected error: need at last one word");
+    this.wordlist?.push(...words);
+    return this;
+  }
+
+  removeWords(...words: string[]) {
+    if (words.length === 0)
+      console.error("Unexpected error: need at last one word to remove");
+    this.wordlist = this.wordlist?.filter((item) => {
+      if (!words.includes(item)) return item;
+    });
+    return this;
   }
 }
