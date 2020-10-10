@@ -1,10 +1,10 @@
 'use strict';
 
 export default interface IDictionary {
-  "pt-br": {
+  'pt-br': {
     words: string[];
   };
-  "en-us": {
+  'en-us': {
     words: string[];
   };
 }

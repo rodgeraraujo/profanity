@@ -24,6 +24,7 @@
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.5",
     "concurrently": "^5.3.0",
+    "husky": "^4.3.0",
     "jest": "^26.5.2",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
@@ -34,7 +35,7 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }

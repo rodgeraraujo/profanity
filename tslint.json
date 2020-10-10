@@ -1,7 +1,7 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "eslint:recommended"
+    "tslint:recommended"
   ],
   "jsRules": {},
   "plugins": [
@@ -9,14 +9,21 @@
   ],
   "rules": {
     "typedef": false,
-    "no-console": false,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-duplicate-variable": true,
+    "no-empty": false,
     "eofline": false,
     "quotemark": [
       true, 
       "single"
     ],
-    "block-scoped-var": "error",
-    "no-var": "error",
     "prefer-const": "error"
   },
   "rulesDirectory": []

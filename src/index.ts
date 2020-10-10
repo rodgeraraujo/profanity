@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-import Configuration from "./interfaces/IConfiguration";
-import dictionary from "./data/dictionary";
+import Configuration from './interfaces/IConfiguration';
+import dictionary from './data/dictionary';
 
-import { getProperty } from "./util";
+import { getProperty } from './util';
 import console from 'console';
 
 /**
@@ -14,7 +14,7 @@ export class Profanity {
   private originalText?: string;
   private config?: Configuration;
   private wordlist?: string[];
-  private censuredPhrase: string = "";
+  private censuredPhrase: string = '';
 
   /**
    * Profanity constructor.
@@ -30,23 +30,23 @@ export class Profanity {
    * @param {Array} config.excludeWords - List of words to be ignored when filter profane words.
    * @param {string} config.language - Language used to filter profane texts.
    */
-  constructor(inputStr: string = "", config?: Configuration) {
+  constructor(inputStr: string = '', config?: Configuration) {
     const configDefaults: Configuration = {
       level: 1,
       saveOriginal: true,
       enabled: true,
-      placeHolder: "*",
+      placeHolder: '*',
       replaceRegex: /[\wÀ-ž]/g,
       separatorRegex: /\w+|[^\w\s]|\s+/g,
       excludeWords: [],
-      language: "pt-br",
+      language: 'pt-br',
     };
 
-    this.phrase = !inputStr || inputStr.length < 1 ? "" : inputStr;
+    this.phrase = !inputStr || inputStr.length < 1 ? '' : inputStr;
     this.config = { ...configDefaults, ...config };
     this.wordlist = getProperty(
       dictionary,
-      this.config?.language as "pt-br"
+      this.config?.language as 'pt-br'
     ).words;
   }
 
@@ -63,14 +63,14 @@ export class Profanity {
 
     const separatorRegex = this.config?.separatorRegex
       ? this.config?.separatorRegex
-      : "";
+      : '';
 
     this.censuredPhrase = this.normalizeText(this.phrase)
       .match(separatorRegex)
       ?.map((value) => {
         return this.isProfane(value) ? this.censureWord(value) : value;
       })
-      .reduce((current, next) => current + next, "");
+      .reduce((current, next) => current + next, '');
 
     return this;
   }
@@ -82,7 +82,7 @@ export class Profanity {
    */
   censureWord(word: any) {
     if (word === undefined) {
-      console.error("Unexpected error: missing word");
+      console.error('Unexpected error: missing word');
       return;
     }
     return word.replace(this.config?.replaceRegex, this.config?.placeHolder);
@@ -95,7 +95,7 @@ export class Profanity {
    * @private
    */
   private normalizeText(str: string) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   /**
@@ -105,7 +105,7 @@ export class Profanity {
    * @public
    */
   censor(str?: string) {
-    this.originalText = this.config?.saveOriginal ? this.phrase : "";
+    this.originalText = this.config?.saveOriginal ? this.phrase : '';
 
     // if false return origianl sentence
     if (!this.config?.enabled) {
@@ -126,12 +126,12 @@ export class Profanity {
    */
   isProfane(value: string) {
     if (this.wordlist === undefined) {
-      console.error("Unexpected error: wordlist is invalid.");
+      console.error('Unexpected error: wordlist is invalid.');
       return;
     }
 
     return this.wordlist.filter((word) => {
-      const regex = new RegExp(`\\b${word.replace(/(\W)/g, "\\$1")}\\b`, "gi");
+      const regex = new RegExp(`\\b${word.replace(/(\W)/g, '\\$1')}\\b`, 'gi');
       return (
         !this.config?.excludeWords?.includes(word.toLowerCase()) &&
         regex.test(value)
@@ -150,19 +150,19 @@ export class Profanity {
     if (this.config?.saveOriginal) {
       return this.originalText;
     }
-    return "";
+    return '';
   }
 
   addWords(...words: string[]) {
     if (words.length === 0)
-      console.error("Unexpected error: need at last one word");
+      console.error('Unexpected error: need at last one word');
     this.wordlist?.push(...words);
     return this;
   }
 
   removeWords(...words: string[]) {
     if (words.length === 0)
-      console.error("Unexpected error: need at last one word to remove");
+      console.error('Unexpected error: need at last one word to remove');
     this.wordlist = this.wordlist?.filter((item) => {
       if (!words.includes(item)) return item;
     });
