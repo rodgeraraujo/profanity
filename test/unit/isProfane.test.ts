@@ -19,11 +19,11 @@ describe('isProfane tests', () => {
     assert(profanity.isProfane('You\'re an asshole^ you are'));
   });
 
-  it('should return true if detect profrane words with type case', () => {
+  it('should return true if detect profrane words and numberswith', () => {
     const profanity = new Profanity('', {
       language: 'en-us',
     });
 
-    assert(profanity.isProfane('FuCk'));
+    assert(profanity.isProfane('That l3sbi4n did a very good H4ndjob.'));
   });
 });

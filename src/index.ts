@@ -76,7 +76,7 @@ export class Profanity {
   }
 
   /**
-   * Censure a word with placeHolder characters;
+   * Censure a word with placeHolder characters.
    * @param {any} word - String to censure.
    * @public
    */
@@ -153,6 +153,11 @@ export class Profanity {
     return '';
   }
 
+  /**
+   * Add word(s) to wordlist filter.
+   * @param {...string} words - Word(s) to add to wordlist.
+   * @public
+   */
   addWords(...words: string[]) {
     if (words.length === 0)
       console.error('Unexpected error: need at last one word');
@@ -160,6 +165,11 @@ export class Profanity {
     return this;
   }
 
+  /**
+   * Remove word(s) to wordlist filter.
+   * @param {...string} words - Word(s) to be removed from wordlist.
+   * @public
+   */
   removeWords(...words: string[]) {
     if (words.length === 0)
       console.error('Unexpected error: need at last one word to remove');
