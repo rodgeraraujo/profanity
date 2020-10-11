@@ -9,10 +9,11 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "strict": true,
+    "declaration": true
   },
   "lib": ["es2015"],
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }

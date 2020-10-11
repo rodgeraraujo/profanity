@@ -5,10 +5,9 @@ import { Profanity } from '../../src/index';
 describe('addWords tests', () => {
   it('should return true for the new word added in list of profane words', () => {
     const profanity = new Profanity();
-    profanity.addWords('bonita')
+    profanity.addWords('bonita');
     assert(profanity.isProfane('bonita'));
   });
-
 
   it('should replace multiple instances of words added in list of profane words', () => {
     const profanity = new Profanity('you is so beautiful baby', {

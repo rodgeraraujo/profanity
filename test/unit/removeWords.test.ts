@@ -20,6 +20,6 @@ describe('removeWords tests', () => {
     const spected = profanity.removeWords('asshole', 'shit').censor();
 
     assert.strictEqual(actual, spected);
-    return
+    return;
   });
 });

@@ -1,14 +1,17 @@
 {
   "name": "profanity",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A filter of swear words. 🤬",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [],
   "author": "Rogério Araújo (rodgeraraujo)",
   "license": "MIT",
   "scripts": {
     "prestart": "npm run compile",
     "pretest": "npm run compile",
+    "prepublish": "npm run compile",
+    "format": "prettier --write \"**/*.ts\" \"**/*.js\"",
     "lint": "tslint --config tslint.json --project .",
     "compile": "rimraf ./dist && tsc",
     "server": "node dist/index.js",
@@ -27,15 +30,17 @@
     "husky": "^4.3.0",
     "jest": "^26.5.2",
     "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.4.1",
     "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.0.3"
   },
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test"
+      "pre-commit": "npm run lint && npm run format && npm run test"
     }
   }
 }

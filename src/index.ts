@@ -44,10 +44,7 @@ export class Profanity {
 
     this.phrase = !inputStr || inputStr.length < 1 ? '' : inputStr;
     this.config = { ...configDefaults, ...config };
-    this.wordlist = getProperty(
-      dictionary,
-      this.config?.language as 'pt-br'
-    ).words;
+    this.wordlist = getProperty(dictionary, this.config?.language as 'pt-br').words;
   }
 
   /**
@@ -61,9 +58,7 @@ export class Profanity {
       return this;
     }
 
-    const separatorRegex = this.config?.separatorRegex
-      ? this.config?.separatorRegex
-      : '';
+    const separatorRegex = this.config?.separatorRegex ? this.config?.separatorRegex : '';
 
     this.censuredPhrase = this.normalizeText(this.phrase)
       .match(separatorRegex)
@@ -132,10 +127,7 @@ export class Profanity {
 
     return this.wordlist.filter((word) => {
       const regex = new RegExp(`\\b${word.replace(/(\W)/g, '\\$1')}\\b`, 'gi');
-      return (
-        !this.config?.excludeWords?.includes(word.toLowerCase()) &&
-        regex.test(value)
-      );
+      return !this.config?.excludeWords?.includes(word.toLowerCase()) && regex.test(value);
     }).length > 0
       ? true
       : false;
@@ -159,8 +151,7 @@ export class Profanity {
    * @public
    */
   addWords(...words: string[]) {
-    if (words.length === 0)
-      console.error('Unexpected error: need at last one word');
+    if (words.length === 0) console.error('Unexpected error: need at last one word');
     this.wordlist?.push(...words);
     return this;
   }
@@ -171,8 +162,7 @@ export class Profanity {
    * @public
    */
   removeWords(...words: string[]) {
-    if (words.length === 0)
-      console.error('Unexpected error: need at last one word to remove');
+    if (words.length === 0) console.error('Unexpected error: need at last one word to remove');
     this.wordlist = this.wordlist?.filter((item) => {
       if (!words.includes(item)) return item;
     });
