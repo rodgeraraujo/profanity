@@ -7,7 +7,7 @@
 <a aria-label="contributors graph" href="https://github.com/rodgeraraujo/profanity/graphs/contributors">
 <img src="https://img.shields.io/github/contributors/rodgeraraujo/profanity.svg">
 </a>
-<a aria-label="license" href="https://github.com/rodgeraraujo/profanity/blob/main/LICENSE">
+<a aria-label="license" href="https://github.com/rodgeraraujo/profanity/blob/main/LICENSE.md">
 <img src="https://img.shields.io/github/license/rodgeraraujo/profanity" alt="">
 </a>
 
@@ -175,7 +175,7 @@ yarn test
 ```
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rodgeraraujo/profanity/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rodgeraraujo/profanity/blob/main/LICENSE.md) file for details.
 
 ## Contributing
 If you want to contribute to a project and make it better, feel free to fork and contribute.
