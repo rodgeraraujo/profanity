@@ -1,10 +1,27 @@
 # Profanity
 
+<a aria-label="npm package" href="https://www.npmjs.com/package/profanity-js">
+<img alt="" src="https://img.shields.io/npm/v/profanity-js.svg">
+</a>
+<a href="https://github.com/rodgeraraujo/profanity/issues"><img src="https://img.shields.io/github/issues/rodgeraraujo/profanity.svg"></a>
+<a aria-label="contributors graph" href="https://github.com/rodgeraraujo/profanity/graphs/contributors">
+<img src="https://img.shields.io/github/contributors/rodgeraraujo/profanity.svg">
+</a>
+<a aria-label="license" href="https://github.com/rodgeraraujo/profanity/blob/main/LICENSE">
+<img src="https://img.shields.io/github/license/rodgeraraujo/profanity" alt="">
+</a>
+
 > *A filter of swear words.*
+
+## Instalation
+
+```sh
+npm i profanity-js
+```
 
 ## API
 
-This module exports a constructor function which takes an inputStr string and `config` object, to creates a `Profanity` instance.
+This module exports a constructor function which takes an `inputStr` string and `config` object, to creates a `Profanity` instance.
 
     Profanity(inputStr, config)
 
@@ -34,19 +51,19 @@ Profanity configurations.
 A `Profanity` instance.
 
 #### Resources
-Every resource is accessed via your `profanity` instance:
+Every resource is accessed via your `Profanity` instance:
 
 - `.censor()` - Evaluate if string is profanity and return an edited version.
 - `.isProfane()` - Evaluate if a string is a profane language.
 - `.censureWord()` - Censure a word with placeHolder characters.
 - `.loadOriginal()` - Return original text if config.saveOrigial as true.
 - `.addWords()` - Add word(s) to wordlist filter.
-- `.removeWords()` - Remove word(s) to wordlist filter.
+- `.removeWords()` - Remove word(s) from wordlist filter.
 
 ## Usage
 
 ```js
-const Profanity = require('lib-name');
+const Profanity = require('profanity-js');
 ```
 ### 1. Censor swear words from a text
 By default, `profanity` replaces each swear words with the string length with asterisk `*`.
