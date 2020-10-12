@@ -16,7 +16,7 @@ describe('isProfane tests', () => {
       language: 'en-us',
     });
 
-    assert(profanity.isProfane('You\'re an asshole^ you are'));
+    assert(profanity.isProfane("You're an asshole^ you are"));
   });
 
   it('should return true if detect profrane words and numberswith', () => {

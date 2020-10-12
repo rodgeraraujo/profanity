@@ -4,10 +4,10 @@ import Profanity from '../../src/index';
 
 describe('censor tests', () => {
   it('should replace a bad word within a default placeholder (*)', () => {
-    const profanity = new Profanity('Don\'t be an ash0le', {
+    const profanity = new Profanity("Don't be an ash0le", {
       language: 'en-us',
     });
-    const actual = 'Don\'t be an ******';
+    const actual = "Don't be an ******";
     const spected = profanity.censor();
 
     assert.strictEqual(actual, spected);
@@ -45,11 +45,11 @@ describe('censor tests', () => {
   });
 
   it('should not replace anything when config.enable is false', () => {
-    const profanity = new Profanity('<p>Don\'t be an asshole</p>', {
+    const profanity = new Profanity("<p>Don't be an asshole</p>", {
       language: 'en-us',
       enabled: false,
     });
-    const actual = '<p>Don\'t be an asshole</p>';
+    const actual = "<p>Don't be an asshole</p>";
     const spected = profanity.censor();
 
     assert.strictEqual(actual, spected);
