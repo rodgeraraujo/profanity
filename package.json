@@ -2,8 +2,8 @@
   "name": "profanity-js",
   "version": "0.1.1",
   "description": "A filter of swear words. 🤬",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist/**/*"
   ],

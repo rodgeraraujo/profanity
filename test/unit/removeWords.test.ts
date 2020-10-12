@@ -1,6 +1,6 @@
 import assert = require('assert');
 
-import { Profanity } from '../../src/index';
+import Profanity from '../../src/index';
 
 describe('removeWords tests', () => {
   it('should return false because remove word from list of profane words', () => {
