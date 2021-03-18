@@ -113,7 +113,7 @@ console.log(profanity.isProfane("Happy day bro!"));
 ```js
 let removeBadwords = ['asshole'];
 
-profanity.removeWords(removeBadwords);
+profanity.removeWords(...removeBadwords);
 
 console.log(profanity.isProfane("Don't be an asshole"));
 // log: false
