@@ -103,7 +103,7 @@ console.log(profanity.isProfane(dirtyText));
 ```js
 let customBadwords = ['happy', 'sometext'];
 
-profanity.addWords(customBadwords);
+profanity.addWords(...customBadwords);
 
 console.log(profanity.isProfane("Happy day bro!"));
 // log: true
