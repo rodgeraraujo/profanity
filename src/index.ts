@@ -163,8 +163,9 @@ class Profanity {
    */
   removeWords(...words: string[]) {
     if (words.length === 0) console.error('Unexpected error: need at last one word to remove');
+    const regex = new RegExp( words.join( "|" ), "i");
     this.wordlist = this.wordlist?.filter((item) => {
-      if (!words.includes(item)) return item;
+      if (! regex.test(item)) return item;
     });
     return this;
   }
