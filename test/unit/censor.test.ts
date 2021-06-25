@@ -58,7 +58,7 @@ describe('censor tests', () => {
   it('should consider wordsList configuration to replace words', () => {
     const profanity = new Profanity("Don't be an ash0le", {
       language: 'en-us',
-      wordsList: ['shit', 'fuck']
+      wordsList: ['shit', 'fuck'],
     });
     const actual = "Don't be an ash0le";
     const spected = profanity.censor();
