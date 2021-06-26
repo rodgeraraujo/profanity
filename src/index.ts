@@ -28,7 +28,7 @@ class Profanity {
    * @param {string} config.replaceRegex - Regular expression used to replace profane words with placeHolder.
    * @param {RegExp} config.separatorRegex - Regular expression used to split a string into words.
    * @param {Array} config.excludeWords - List of words to be ignored when filter profane words.
-   * @param {Array} config.wordsList - List of words to be considered as profane words.
+   * @param {Array} config.wordsList - List of words to be override the default dictionary of profane words.
    * @param {string} config.language - Language used to filter profane texts.
    */
   constructor(inputStr: string = '', config?: Configuration) {
