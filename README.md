@@ -45,6 +45,7 @@ Profanity configurations.
 - `replaceRegex` - Regular expression used to replace profane words with placeHolder.
 - `separatorRegex` - Regular expression used to split a string into words.
 - `excludeWords` - List of words to be ignored when filter profane words.
+- `wordsList` - List of words to be override the default dictionary of profane words.
 - `language` - Language used to filter profane texts.
 
 ### Return value
@@ -161,6 +162,22 @@ const profanity = new Profanity(dirtyText, config)
 
 console.log(profanity.censor());
 // log: ---- this ----
+```
+
+### 9. Overrides default dictionary
+To overrides the default profane dictionary, just set the new `Array` of words in config Object.
+
+```js
+let config = {
+    wordsList: ['shit', 'fuck', 'this']
+};
+
+let dirtyText = "fuck this shit";
+
+const profanity = new Profanity(dirtyText, config)
+
+console.log(profanity.censor());
+// log: **** **** *****
 ```
 
 ## Testing
