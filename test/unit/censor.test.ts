@@ -54,4 +54,15 @@ describe('censor tests', () => {
 
     assert.strictEqual(actual, spected);
   });
+
+  it('should consider wordsList configuration to replace words', () => {
+    const profanity = new Profanity("Don't be an ash0le", {
+      language: 'en-us',
+      wordsList: ['shit', 'fuck'],
+    });
+    const actual = "Don't be an ash0le";
+    const spected = profanity.censor();
+
+    assert.strictEqual(actual, spected);
+  });
 });

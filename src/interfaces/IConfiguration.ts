@@ -9,4 +9,5 @@ export default interface IConfiguration {
   separatorRegex?: RegExp;
   excludeWords?: string[];
   language?: string;
+  wordsList?: string[];
 }
