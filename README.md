@@ -120,16 +120,6 @@ console.log(profanity.isProfane("Don't be an asshole"));
 // log: false
 ```
 
-### 6. Check if the string contains any swear words
-Function `.isProfane()` return `True` if any words in the given string has a word existing in the wordlist.
-
-```js
-let dirtyText = "That l3sbi4n did a very good H4ndjob.";
-
-console.log(profanity.isProfane(dirtyText));
-// log: true
-```
-
 ### 7. Language support
 The lib supports two languages they are Brazilian Portuguese and English, the defaults are Portuguese and to change this, see below.
 
