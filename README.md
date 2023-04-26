@@ -120,17 +120,7 @@ console.log(profanity.isProfane("Don't be an asshole"));
 // log: false
 ```
 
-### 6. Check if the string contains any swear words
-Function `.isProfane()` return `True` if any words in the given string has a word existing in the wordlist.
-
-```js
-let dirtyText = "That l3sbi4n did a very good H4ndjob.";
-
-console.log(profanity.isProfane(dirtyText));
-// log: true
-```
-
-### 7. Language support
+### 6. Language support
 The lib supports two languages they are Brazilian Portuguese and English, the defaults are Portuguese and to change this, see below.
 
 ```js
@@ -148,7 +138,7 @@ console.log(profanity.censor());
 
 > The `config` Object will be overwritten the default values.
 
-### 8. Overrides placeHolder
+### 7. Overrides placeHolder
 To use a custom placeHolder, just overwritten the default value with a config Object.
 
 ```js
@@ -164,7 +154,7 @@ console.log(profanity.censor());
 // log: ---- this ----
 ```
 
-### 9. Overrides default dictionary
+### 8. Overrides default dictionary
 To overrides the default profane dictionary, just set the new `Array` of words in config Object.
 
 ```js
